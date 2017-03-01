@@ -40,14 +40,8 @@ var drawline = function( x, y, event ) {
 };
 
 var clear = function() {
-  var c = document.createElementNS("http://www.w3.org/2000/svg",
- "rect");
-  c.setAttribute( "x", 0 );
-  c.setAttribute( "y", 0 );
-  c.setAttribute( "width", 500 );
-  c.setAttribute( "height", 500 );
-  c.setAttribute( "fill", "white" );
-  pic.appendChild( c );
+  while(pic.childNodes.length > 0)
+    pic.removeChild(pic.childNodes[0]);
   lastX = -1;
 };
 
